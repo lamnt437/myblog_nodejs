@@ -6,6 +6,7 @@ const app = express();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const homeRouter = require('./routes/home');
+const meetingRouter = require('./routes/meeting');
 
 // setup view engine
 app.set('views', path.join(__dirname, 'views'));
@@ -27,11 +28,20 @@ app.use(express.static("express"));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRouter);
+app.use('/meeting', meetingRouter);
+
+// app.post('/meeting/signature', (req, res) => {
+//     const meetConfig = req.body.meetConfig;
+
+//     meetConfig.push();
+//     res.send();
+// });
 
 const server = http.createServer(app);
 const port = 3000;
 
 var MongoClient = require('mongodb').MongoClient;
+const { ReplSet } = require('mongodb');
 var url = "mongodb://localhost:27017/mydb";
 
 server.listen(port);

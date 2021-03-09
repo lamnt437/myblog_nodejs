@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Vue</title>
+</head>
+<body>
+    <div id="app">
+        <div class="product-info">
+            <h1>{{ product }}</h1>
+        </div>
+        <div class="product-image">
+            <img v-bind:src="image">
+            <a v-bind:href="link">Link to product's page</a>
+            <p v-if="inStock > 10">In stock</p>
+            <p v-elif="inStock <= 10 && inStock > 0">Almost out of stock</p>
+            <p v-else>Out of Stock</p>
+            <span v-if="onSale">On Sale!</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- should change this in the real project -->
+    <script src="./index.js"></script>
+</body>
+</html>

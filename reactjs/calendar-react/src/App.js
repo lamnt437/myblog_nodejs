@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import TodoList from './Todo';
-import Post from './Post.tsx'
 
 function App() {
   return (
@@ -20,8 +18,6 @@ function App() {
           Learn React
         </a>
       </header>
-      {/* <TodoList /> */}
-      <Post></Post>
     </div>
   );
 }
